@@ -3,15 +3,16 @@ include *.md
 include *.cfg
 include *.pkl
 include *.py
+include *.sav
 
-include trained_models/*.py
-include pred_data/
+include pred_data/*
 include processing/*.py
-recursive-include trained_models/*
 recursive-include data/*
+recursive-include trained_models *
 
 include ./requirements.txt
 exclude *.log
+exclude *.h5
 
 recursive-exclude * __pycache__
 recursive-exclude * *.py[co]Ne
