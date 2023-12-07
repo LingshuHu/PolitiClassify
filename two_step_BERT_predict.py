@@ -8,6 +8,16 @@ def two_step_BERT_predict(
                      data_path,
                      text_variable,
                      user_variable):
+    """
+    two_step_BERT_predict takes the dataframe containing multiple tweets from users and makes predictions about the political identity of each user.
+
+    :param step2_model_path: The path for the trained SVM model.
+    :param data_path: The path for the input dataset.
+    :param text_variable: The name of the column that contains texts. 
+    :param user_variable: The name of the column that contains user ids.
+
+    :return: A dataframe with predicted probabilities for each user. 
+    """ 
 
     df = BERT_predict(
                       

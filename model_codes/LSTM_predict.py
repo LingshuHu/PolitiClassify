@@ -14,6 +14,19 @@ def LSTM_predict(model_path,
                  user_variable,
                  maxlen,
                  batch_size):
+    """
+    LSTM_predict takes texts from a csv file and makes predictions about the political identity of those texts.
+
+    :param model_path: The path for the pretrained LSTM model.
+    :param tokenizer_path: The path for the trained tokenizer.
+    :param data_path: The path for the input dataset.
+    :param text_variable: The name of the column that contains texts. 
+    :param user_variable: The name of the column that contains user ids.
+    :param maxlen: The max number of tokens of the input texts. 
+    :param batch_size: Batch size.
+
+    :return: A dataframe with predicted probabilities for each tweet/text. 
+    """ 
     # load the trained LSTM model
     model = load_model(model_path,
                        custom_objects={'AttentionWithContext': AttentionWithContext})

@@ -4,6 +4,15 @@ import numpy as np
 from processing.text_preprocessing import preprocess
 
 def input_output(text_array, tokenizer, max_length):
+    """
+    input_output transforms texts into BERT input.
+
+    :param text_array: A list containing all the texts for the BERT model.
+    :param tokenizer: Initialized BERT tokenizer. 
+    :param max_length: The max number of tokens of the input texts. 
+
+    :return: Token ids and masks for the BERT model. 
+    """ 
     input_ids=[]
     attention_masks=[]
 
@@ -26,6 +35,15 @@ def input_output(text_array, tokenizer, max_length):
 def BERT_predict(data_path,
                  text_variable,
                  user_variable):
+    """
+    BERT_predict takes texts from a csv file and makes predictions about the political identity of those texts.
+
+    :param data_path: The path for the input dataset.
+    :param text_variable: The name of the column that contains texts. 
+    :param user_variable: The name of the column that contains user ids.
+
+    :return: A dataframe with predicted probabilities. 
+    """ 
     # load the data
     df = pd.read_csv(data_path)
 

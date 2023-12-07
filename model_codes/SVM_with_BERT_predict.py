@@ -5,6 +5,16 @@ import pickle
 def SVM_with_BERT_predict(df_pred,
                           user_variable,
                           model_path):
+
+    """
+    SVM_with_BERT_predict takes the predictions from the first step BERT model and makes predictions about each Twitter user's political identity.
+
+    :param df_pred: The dataframe containing the predicted probability of each text. 
+    :param model_path: The path for the trained SVM model.
+    :param user_variable: The name of the column that contains user ids.
+
+    :return: A dataframe with predicted probabilities for each user. 
+    """                       
     # obtain features from the step 1 predictions.
     ds = df_pred.groupby([user_variable])['pred_proba'].describe()
 

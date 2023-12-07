@@ -5,6 +5,15 @@ from nltk.corpus import stopwords
 stop_words = stopwords.words("english")
 
 def preprocess(text, remove_stop_words = False):
+    """
+    preprocess helps clean texts.
+
+    :param text: The target text for cleaning. It should be a string.
+    :param remove_stop_words: Whether remove stop words. The defaul is False.
+
+    :return: This function returns cleaned text as a string. 
+    """ 
+
     # remove link
     text = re.sub(r"(http?\://|https?\://|www)\S+", " ", str(text).lower()).strip()
     # remove newlines

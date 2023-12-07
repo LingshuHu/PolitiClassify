@@ -9,6 +9,17 @@ def two_step_LSTM_predict(step1_model_path,
                      data_path,
                      text_variable,
                      user_variable):
+    """
+    two_step_LSTM_predict takes the dataframe containing multiple tweets from users and makes predictions about the political identity of each user.
+
+    :param step2_model_path: The path for the trained SVM model.
+    :param step1_tokenizer_path: The path for the trained LSTM model tokenizer.
+    :param data_path: The path for the input dataset.
+    :param text_variable: The name of the column that contains texts. 
+    :param user_variable: The name of the column that contains user ids.
+
+    :return: A dataframe with predicted probabilities for each user. 
+    """ 
 
     df = LSTM_predict(model_path=step1_model_path,
                       tokenizer_path=step1_tokenizer_path,
