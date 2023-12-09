@@ -4,10 +4,11 @@ include *.cfg
 include *.pkl
 include *.py
 include *.sav
+include *.csv
 
 include pred_data/*
 include processing/*.py
-recursive-include data/*
+recursive-include data *
 recursive-include trained_models *
 
 include ./requirements.txt
