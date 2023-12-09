@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 
 
 # Package meta-data.
-VERSION = '0.0.1'
+VERSION = '0.0.2'
 NAME = 'PolitiClassify'
 DESCRIPTION = "Classify Twitter users' political orientation based on their multiple tweets"
 URL = 'https://github.com/LingshuHu/PolitiClassify'
