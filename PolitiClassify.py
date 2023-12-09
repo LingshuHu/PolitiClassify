@@ -6,10 +6,10 @@ from model_codes.LSTM_predict import LSTM_predict
 from model_codes.SVM_with_LSTM_predict import SVM_with_LSTM_predict
 
 def two_step_BERT_predict(
-                     step2_model_path,
                      data_path,
                      text_variable,
-                     user_variable):
+                     user_variable,
+                     step2_model_path=config.SVM_BERT_MODEL_PATH):
     """
     two_step_BERT_predict takes the dataframe containing multiple tweets from users and makes predictions about the political identity of each user.
 
@@ -22,7 +22,6 @@ def two_step_BERT_predict(
     """ 
 
     df = BERT_predict(
-                      
                       data_path=data_path,
                       text_variable=text_variable,
                       user_variable=user_variable)
@@ -34,12 +33,13 @@ def two_step_BERT_predict(
 
     
 
-def two_step_LSTM_predict(step1_model_path,
-                     step2_model_path,
-                     step1_tokenizer_path,
+def two_step_LSTM_predict(
                      data_path,
                      text_variable,
-                     user_variable):
+                     user_variable,
+                     step1_model_path=config.LSTM_MODEL_PATH,
+                     step2_model_path=config.SVM_LSTM_MODEL_PATH,
+                     step1_tokenizer_path=config.LSTM_TOKENIZER_PATH):
     """
     two_step_LSTM_predict takes the dataframe containing multiple tweets from users and makes predictions about the political identity of each user.
 
