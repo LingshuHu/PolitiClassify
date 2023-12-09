@@ -5,8 +5,11 @@ In the first step, the model classifies the political orientation of individual 
 
 Two trained models can be chosen for the first step of the method: LSTM and BERT. The trained BERT model is the default and will be automatically downloaded. The trained LSTM model needs to be downloaded from [here](https://drive.google.com/file/d/1uqw9rjmDyDtJ-Z827O85SiE3lY00l1ed/view?usp=drive_link). After downloading the trained LSTM model, you can store the model in the "trained_models" folder, or you can specify the path of the model in the function argument "step1_model_path.
 
-To use this Python package, you can download it from GitHub, store your dataset in the "data" folder, change the name of the dataset in the `config.py` file, and then run `PolitiClassify.py` in your terminal. Alternatively, you can also import the two_step_BERT_predict function from `PolitiClassify.py` and use it as follows:
-
+To use this Python package, you can install it by using:
+```
+pip install PolitiClassify
+```
+Then you can import the functions from the package and use it as follows:
 ```Python
 from PolitiClassify import two_step_BERT_predict
 user_pred = two_step_BERT_predict(data_path="data/example_tweets.csv",
@@ -22,6 +25,8 @@ user_pred = two_step_LSTM_predict(step1_model_path="trained_models/cong_politici
                                   text_variable="text",
                                   user_variable="user_id")
 ```
+
+Alternatively, you can download it from GitHub, store your dataset in the "data" folder, change the name of the dataset in the `config.py` file, and then run `PolitiClassify.py` in your terminal.
 
 Please cite this paper:
 
