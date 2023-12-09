@@ -1,7 +1,7 @@
 # PolitiClassify
 A Python package for classifying Twitter users' political orientation using two-step deep learning models.
 
-In the first step, the model classifies the political orientation of individual tweets. In the second step, the model classifies the political orientation of individual users based on their multiple tweets. The accuracy of using this two-step method to classify non-politician Twitter users' political orientation based on their 200 tweets is around 96.33%.
+In the first step, the model classifies the political orientation of individual tweets. In the second step, the model classifies the political orientation of individual users based on their multiple tweets and output the label (0 for liberal/democratic; 1 for conservative/republican) for each user. The accuracy of using this two-step method to classify non-politician Twitter users' political orientation based on their 200 tweets is around 96.33%.
 
 Two trained models can be chosen for the first step of the method: LSTM and BERT. The trained BERT model is the default and will be automatically downloaded. The trained LSTM model needs to be downloaded from [here](https://drive.google.com/file/d/1uqw9rjmDyDtJ-Z827O85SiE3lY00l1ed/view?usp=drive_link). After downloading the trained LSTM model, you can store the model in the "trained_models" folder, or you can specify the path of the model in the function argument "step1_model_path.
 
