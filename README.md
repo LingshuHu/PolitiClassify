@@ -12,18 +12,22 @@ pip install PolitiClassify
 Then you can import the functions from the package and use it as follows:
 ```Python
 from PolitiClassify import two_step_BERT_predict
-user_pred = two_step_BERT_predict(data_path="data/example_tweets.csv",
-                                  text_variable="text",
-                                  user_variable="user_id")
+user_pred = two_step_BERT_predict(
+    data_path="data/example_tweets.csv",
+    text_variable="text",
+    user_variable="user_id"
+    )
 ```
 If you prefer to use the trained LSTM model as the first-step model, you can do the following:
 
 ```Python
 from PolitiClassify import two_step_LSTM_predict
-user_pred = two_step_LSTM_predict(step1_model_path="trained_models/cong_politician_2020-3-12-2021-5-28_balanced_pre-w2v.h5",
-                                  data_path="data/example_tweets.csv",
-                                  text_variable="text",
-                                  user_variable="user_id")
+user_pred = two_step_LSTM_predict(
+    step1_model_path="trained_models/cong_politician_2020-3-12-2021-5-28_balanced_pre-w2v.h5",
+    data_path="data/example_tweets.csv",
+    text_variable="text",
+    user_variable="user_id"
+    )
 ```
 
 Alternatively, you can download it from GitHub, store your dataset in the "data" folder, change the name of the dataset in the `config.py` file, and then run `PolitiClassify.py` in your terminal.
